@@ -11,7 +11,7 @@ public class BatController : MonoBehaviour {
     Quaternion playerRotation;
     Quaternion origRotation;
 
-    float Speed = 0.15f;
+    float Speed = 8f;
     
     public Text BatInfo;
 
@@ -34,14 +34,14 @@ public class BatController : MonoBehaviour {
 
         if (BatSpeed != 0)
         {
-            float zPos = transform.position.z + BatSpeed;
+            float zPos = origPos.z + BatSpeed;
 
             playerPos = new Vector3(9f, 0.6f, Mathf.Clamp(zPos, -7f, 7f));
 
             transform.position = playerPos;
         }
-        else
-            transform.position = origPos;
+        //else
+        //    transform.position = origPos;
 
         if (BatDir != 0)
         {
@@ -51,8 +51,8 @@ public class BatController : MonoBehaviour {
 
             transform.rotation = playerRotation;
         }
-        else
-            transform.rotation = origRotation;
+        //else
+        //    transform.rotation = origRotation;
     }
 
     
